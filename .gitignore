@@ -1,14 +1,75 @@
-# http://www.gnu.org/software/automake
 
-Makefile.in
+# Numerous always-ignore extensions
+*.diff
+*.err
 
-# http://www.gnu.org/software/autoconf
+*.orig
 
-/autom4te.cache
-/aclocal.m4
-/compile
-/configure
-/depcomp
-/install-sh
-/missing
-/stamp-h1
+
+
+*.log
+*.rej
+*.swo
+*.swp
+
+*.zip
+*.vi
+
+
+
+*~
+*.sass-cache
+
+
+# OS or Editor folders
+
+.DS_Store
+
+
+
+._*
+Thumbs.db
+.cache
+
+.project
+.settings
+.tmproj
+
+
+
+*.esproj
+
+nbproject
+*.sublime-project
+*.sublime-workspace
+
+
+# Komodo
+
+
+
+*.komodoproject
+.komodotools
+
+
+# Folders to ignore
+.hg
+
+
+
+.svn
+
+.CVS
+.idea
+node_modules
+
+dist
+
+
+
+
+# One file which is being a pest
+/config/configuration.php
+
+phpinfo.php
+nbproject
