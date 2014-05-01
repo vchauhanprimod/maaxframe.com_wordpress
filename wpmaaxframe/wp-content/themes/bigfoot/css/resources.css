@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200italic,300italic,400italic,600italic,700italic,900italic,200,300,400,600,700,900);
+
+@font-face {
+	font-family: 'icons';
+	src:url("f/icons.eot");
+	src:url("f/icons.eot?#iefix") format("embedded-opentype"),
+		url("f/icons.woff") format("woff"),
+		url("f/icons.ttf") format("truetype"),
+		url("f/icons.svg#icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	font-family: 'icons';
+	content: attr(data-icon);
+	speak: none;
+	text-transform: none;
+}

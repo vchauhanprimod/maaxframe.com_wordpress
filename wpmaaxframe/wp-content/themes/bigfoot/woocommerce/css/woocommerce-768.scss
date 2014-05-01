@@ -1,0 +1,133 @@
+// =============================================================================
+// Configuration
+// =============================================================================
+// =============================================================================
+
+// Theme config
+
+$container: 744px; // Container width in px
+$numcol   : 12;	 // Grid columns number
+$gutter   : 20px; 	 // Grid gutter in px
+$baseline : 24px; 	 // Vertical baseline
+
+$radius   : 6px;
+
+// Global styles
+// =============================================================================
+
+.woocommerce,
+.thb-shortcode {
+	// Shop columns
+	// -------------------------------------------------------------------------
+
+	&.thb-shop-3col {
+		ul.products  li.product {
+			@include col(4);
+		}
+	}
+
+	&.thb-shop-4col {
+		ul.products  li.product {
+			@include col(3);
+		}
+	}
+
+	&.w-sidebar {
+		&.thb-shop-4col {
+			ul.products  li.product {
+				@include col(2);
+			}
+		}
+	}
+}
+
+.woocommerce-page {
+	&.archive #content {
+		@include box_col(12);
+		margin: 0;
+	}
+
+	&.w-sidebar #content {
+		@include box_col(8);
+		margin: 0;
+	}
+
+	&.single-product,
+	&.woocommerce-cart {
+		#content {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		.woocommerce-message {
+			@include col(12);
+		}
+	}
+
+	.thb-cart-page-table {
+		.shop_table { @include col(12); display: table; }
+		.thb-cart-collaterals { @include col(12); }
+	}
+
+	.shipping_calculator {
+		@include col(4);
+	}
+
+	&.single-product {
+		div.images {
+			@include col(6);
+		}
+
+		div.summary {
+			@include col(6);
+		}
+	}
+
+	.related,
+	.upsells.products {
+		@include box_col(12);
+		margin: 0;
+
+		ul.products  li.product.last {
+			margin-right: 0;
+		}
+
+		ul.products  li.product.first {
+			margin-left: 0;
+		}
+	}
+
+	.col2-set {
+		.col-1, .col-2 {
+			@include col(6);
+		}
+
+		.col-1 {
+			margin-left: 0;
+		}
+
+		.col-2 {
+			margin-right: 0;
+			float: right;
+		}
+	}
+
+	// Single product
+	// -------------------------------------------------------------------------
+
+	&.single-product {
+		#content > .product.hentry {
+			.onsale {
+				top: $mv_small;
+				left: $mv_small + 20px;
+			}
+		}
+	}
+
+	// Cart empty
+	// -------------------------------------------------------------------------
+	
+	&.thb-woocommerce-cartempty #content {
+		@include col(12);
+	}
+}

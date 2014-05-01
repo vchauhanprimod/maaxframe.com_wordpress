@@ -1,0 +1,301 @@
+// =============================================================================
+// Configuration
+// =============================================================================
+// =============================================================================
+
+// Theme config
+
+$container: 480px; // Container width in px
+$numcol   : 4;	 // Grid columns number
+$gutter   : 40px; 	 // Grid gutter in px
+$baseline : 24px; 	 // Vertical baseline
+
+$radius   : 6px;
+
+// Global styles
+// =============================================================================
+
+.woocommerce-page {
+	&.archive #content {
+		@include flex_box_col(4);
+		margin: 0;
+	}
+
+	&.w-sidebar #content {
+		@include flex_box_col(4);
+		margin: 0;
+	}
+
+	&.single-product,
+	&.woocommerce-cart {
+		#content {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		.woocommerce-message {
+			@include flex_col(4);
+		}
+	}
+
+	.thb-cart-page-table {
+		.shop_table { @include flex_col(4); display: table; }
+		.thb-cart-collaterals { @include flex_col(4); }
+	}
+
+	.shipping_calculator {
+		@include flex_col(4);
+	}
+
+	&.single-product {
+		div.images {
+			@include flex_col(4);
+			margin-bottom: $baseline;
+		}
+
+		.thb-product-header {
+			display: none;
+		}
+
+		.thb_product_mobile_header {
+			@include flex_col(4);
+			margin-bottom: $baseline;
+			display: block;
+			text-align: center;
+
+			// Title
+			// -----------------------------------------------------------------
+		
+			.product_title {
+				font-size: 22px;
+				line-height: 1.1;
+				letter-spacing: -1px;
+				font-weight: 800;
+				color: #333;
+			}
+
+			// Star rating 
+			// -----------------------------------------------------------------
+			
+			.star-rating {
+				display: inline-block;
+				float: none;
+				margin-top: 5px;
+			}
+		
+			// Price
+			// -----------------------------------------------------------------
+			
+			div[itemprop="offers"] {
+				@include clearfix;
+				clear: both;
+				display: block;
+			}
+
+			.price {
+				margin-top: 5px;
+				font-size: 22px;
+				line-height: 1.1;
+				letter-spacing: -1px;
+				font-weight: 800;
+				color: $grey;
+
+				.amount {
+					color: #333;
+				}
+				
+				del {
+					margin-right: 5px;
+					color: #333;
+
+					.amount {
+						font-size: 14px;
+						color: #999;
+						font-weight: normal;
+					}
+				}
+
+				ins {
+					text-decoration: none;
+				}
+
+				.from {
+						
+				}
+			}
+
+		}
+
+		div.summary {
+			@include flex_col(4);
+		}
+	}
+
+	.related,
+	.upsells.products {
+		@include flex_box_col(4);
+		margin: 0;
+
+		ul.products  li.product.last {
+			margin-right: 0;
+		}
+
+		ul.products  li.product.first {
+			margin-left: 0;
+		}
+	}
+
+	.col2-set {
+		.col-1, .col-2 {
+			@include flex_box_col(4);
+			margin: 0 0 $baseline 0;
+			overflow: hidden;
+		}
+
+		.col-2 {
+			float: left;
+		}
+	}
+
+	.thb-shop-ordering {
+		ul {
+			margin-top: $baseline - 5px;
+
+			li {
+				margin-top: 5px;
+			}
+		}
+	}
+
+	// Cart empty
+	// -------------------------------------------------------------------------
+	
+	&.thb-woocommerce-cartempty #content {
+		@include flex_col(4);
+	}
+
+	// Cart
+	// -------------------------------------------------------------------------
+	
+	.thb-cart-collaterals {
+		.thb-cart-coupon {
+			.input-text {
+				width: 53%;
+			}
+
+			.button {
+				width: 45%;
+			}
+		}
+	}
+
+	.thb-cart-page-table {
+		.shop_table .product-remove a {
+			@include square($baseline);
+			line-height: 20px;
+			font-size: 16px;
+		}
+
+		.footable-cell-detail {
+			padding-left: 0;
+			padding-right: 0;
+
+			.footable-row-detail-inner {
+				display: table;
+				width: 100%;
+
+				> div {
+					display: table-cell;
+					vertical-align: middle;
+
+					.quantity {
+						display: block;
+						margin-top: 5px;
+					}
+				}
+
+				.attachment-shop_thumbnail {
+					width: $baseline*2;
+					height: $baseline*2;
+					border: 2px solid $grey;
+					@include border-radius($radius);
+				}
+			}
+		}
+	}
+
+	.thb-order-review-container {
+		.thb-shop-table,
+		#payment {
+			width: 100%;
+		}
+	}
+
+	// Single product
+	// -------------------------------------------------------------------------
+
+	&.single-product {
+		#content > .product.hentry {
+			.onsale {
+				top: 20px;
+				left: flex_col_gutter(2);
+			}
+		}
+	}
+}
+
+.woocommerce,
+.thb-shortcode {
+	// Shop columns
+	// -------------------------------------------------------------------------
+
+	&.thb-shop-3col {
+		ul.products  li.product {
+			@include flex_col(4);
+		}
+	}
+
+	&.thb-shop-4col {
+		ul.products  li.product {
+			@include flex_col(4);
+		}
+	}
+
+	&.w-sidebar {
+		&.thb-shop-4col {
+			ul.products  li.product {
+				@include flex_col(4);
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+	.woocommerce,
+	.thb-shortcode {
+		// Shop columns
+		// -------------------------------------------------------------------------
+
+		&.thb-shop-3col {
+			ul.products  li.product {
+				@include flex_col(2);
+			}
+		}
+
+		&.thb-shop-4col {
+			ul.products  li.product {
+				@include flex_col(2);
+			}
+		}
+
+		&.w-sidebar {
+			&.thb-shop-4col {
+				ul.products  li.product {
+					@include flex_col(2);
+				}
+			}
+		}
+	}
+}
+
+.nav-active .thb-mini-cart-icon { display: none; }
